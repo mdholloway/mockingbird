@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CoreGraphics
 
 public extension ValueProvider {
   /// A value provider with primitive Swift types.
@@ -49,10 +48,6 @@ public extension ValueProvider {
     ObjectIdentifier(UUID.self): UUID(),
     ObjectIdentifier(IndexPath.self): IndexPath(),
     ObjectIdentifier(IndexSet.self): IndexSet(),
-    ObjectIdentifier(CGFloat.self): CGFloat(),
-    ObjectIdentifier(CGPoint.self): CGPoint(),
-    ObjectIdentifier(CGSize.self): CGSize(),
-    ObjectIdentifier(CGRect.self): CGRect(),
   ], identifiers: [
     Optional<Any>.providableIdentifier,
   ])
@@ -64,8 +59,6 @@ public extension ValueProvider {
   /// https://developer.apple.com/documentation/foundation/strings_and_text
   static let stringsProvider = ValueProvider(values: [
     ObjectIdentifier(String.self): String(),
-    ObjectIdentifier(NSAttributedString.self): NSAttributedString(),
-    ObjectIdentifier(NSMutableAttributedString.self): NSMutableAttributedString(),
     ObjectIdentifier(CharacterSet.self): CharacterSet(),
     ObjectIdentifier(Character.self): "",
   ])
@@ -77,7 +70,6 @@ public extension ValueProvider {
   /// https://developer.apple.com/documentation/foundation/dates_and_times
   static let datesProvider = ValueProvider(values: [
     ObjectIdentifier(Date.self): Date(),
-    ObjectIdentifier(NSDate.self): NSDate(),
     ObjectIdentifier(TimeInterval.self): TimeInterval(),
   ])
 }
