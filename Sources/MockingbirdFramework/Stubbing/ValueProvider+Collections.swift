@@ -19,17 +19,11 @@ extension Dictionary: Providable {
   public static func createInstance() -> Self? { Dictionary() }
 }
 
-public extension ValueProvider {  
+public extension ValueProvider {
   /// A value provider with default-initialized collections.
   ///
   /// https://developer.apple.com/documentation/foundation/collections
-  static let collectionsProvider = ValueProvider(values: [
-    ObjectIdentifier(NSCountedSet.self): NSCountedSet(),
-    ObjectIdentifier(NSOrderedSet.self): NSOrderedSet(),
-    ObjectIdentifier(NSMutableOrderedSet.self): NSMutableOrderedSet(),
-    ObjectIdentifier(NSPurgeableData.self): NSPurgeableData(),
-    ObjectIdentifier(NSPointerArray.self): NSPointerArray(),
-  ], identifiers: [
+  static let collectionsProvider = ValueProvider(values: [], identifiers: [
     Array<Any>.providableIdentifier,
     Set<AnyHashable>.providableIdentifier,
     Dictionary<AnyHashable, Any>.providableIdentifier,
